@@ -7,11 +7,13 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  color: #333;
+  background: linear-gradient(to bottom right, #1e1e2f, #3b3054);
+  color: #f5f5f5;
+  overflow-x: hidden;
   line-height: 1.6;
-  background-color: #f8f9fa;
 }
 
+/* Container */
 .container {
   width: 90%;
   max-width: 1200px;
@@ -20,25 +22,25 @@ body {
 
 /* Header */
 .header {
-  background: linear-gradient(90deg, #6a11cb, #2575fc);
-  color: white;
-  padding: 1rem 0;
   position: sticky;
   top: 0;
   z-index: 1000;
+  background: #3b3054;
+  color: white;
+  padding: 1rem 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: white;
+  color: #ffd700;
   text-decoration: none;
 }
 
 .logo span {
-  color: #ffd700;
+  color: #ffa31a;
 }
 
 .nav-link {
@@ -46,11 +48,11 @@ body {
   color: white;
   text-decoration: none;
   font-size: 1rem;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease-in-out;
 }
 
 .nav-link:hover {
-  color: #ffd700;
+  color: #ffa31a;
 }
 
 .header .container {
@@ -65,95 +67,84 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 4rem 0;
-  background: url('/background.jpeg') no-repeat center center/cover;
+  background: linear-gradient(to bottom right, #6a11cb, #2575fc);
   color: white;
-}
-
-.hero .text {
-  max-width: 50%;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 3.5rem;
+  animation: fadeInUp 2s ease-out;
 }
 
-.hero .highlight {
+.highlight {
   color: #ffd700;
+  animation: pulse 3s infinite;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+.subtext span {
+  font-weight: bold;
+  color: #ffa31a;
 }
 
 .hero .btn {
-  background: #6a11cb;
-  color: white;
-  padding: 0.7rem 1.5rem;
-  text-decoration: none;
+  background: #ff7b54;
+  padding: 0.8rem 1.5rem;
   font-size: 1rem;
-  border-radius: 5px;
-  transition: background 0.3s ease;
+  text-transform: uppercase;
+  border-radius: 50px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
 }
 
 .hero .btn:hover {
-  background: #2575fc;
+  background: #ffa31a;
+  transform: scale(1.1);
 }
 
 .hero img {
-  max-width: 100%;
+  width: 100%;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  animation: zoomIn 2s ease;
 }
 
 /* About Section */
 .about {
   padding: 4rem 0;
+  background: #f9f9f9;
   text-align: center;
-  background-color: #f9f9f9;
+  color: #333;
 }
 
 .about h2 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  color: #3b3054;
 }
 
 .about p {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
-  max-width: 600px;
-  margin: 0 auto 2rem;
 }
 
 .about .btn {
-  padding: 0.7rem 1.5rem;
-  background: #6a11cb;
+  background: #3b3054;
   color: white;
-  text-decoration: none;
-  font-size: 1rem;
-  border-radius: 5px;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
 }
 
 .about .btn:hover {
-  background: #2575fc;
+  background: #ffa31a;
+  color: white;
 }
 
 /* Contact Section */
 .contact {
   padding: 4rem 0;
   text-align: center;
-  background: white;
-}
-
-.contact h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.contact p {
-  margin-bottom: 2rem;
-  font-size: 1.2rem;
+  background: #1e1e2f;
+  color: white;
 }
 
 .social-icons {
@@ -164,20 +155,51 @@ body {
 
 .icon {
   font-size: 2rem;
-  color: #6a11cb;
-  transition: transform 0.3s ease, color 0.3s ease;
+  color: #ffd700;
+  transition: all 0.3s ease;
 }
 
 .icon:hover {
+  color: #ffa31a;
   transform: scale(1.2);
-  color: #2575fc;
 }
 
 /* Footer */
 footer {
-  padding: 1rem 0;
   text-align: center;
-  background: #6a11cb;
+  padding: 1rem 0;
+  background: #3b3054;
   color: white;
-  font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
